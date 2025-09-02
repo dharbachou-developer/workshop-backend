@@ -1,0 +1,30 @@
+### Sign up
+POST http://localhost:3007/auth/signup
+content-type: application/json
+
+{
+  "email": "ivanov.ivan.01@gmail.com",
+  "password": "12312",
+  "passwordRepeat": "12312"
+}
+
+### Login
+# @no-cookie-jar
+POST http://localhost:3007/auth/login
+content-type: application/json
+
+{
+  "email": "ivanov.ivan.01@gmail.com",
+  "password": "12312"
+}
+
+### Update
+PUT http://localhost:3007/auth/update
+content-type: application/json
+cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNGY1NTM4Ni1jYjM2LTQ1MmYtYmRlZS03NTYyOTQzYjVmNmIiLCJlbWFpbCI6Iml2YW5vdi5pdmFuLjAxQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzU2Mzg3MDg0LCJleHAiOjE3NTYzOTA2ODR9.HlafdQoj7Q91Ix4CLwxBNrekMrR19gClu6E0Y3gYjrA
+
+{
+
+  "email": "ivanov.ivan.00011@gmail.com",
+  "roles": ["Admin"]
+}
