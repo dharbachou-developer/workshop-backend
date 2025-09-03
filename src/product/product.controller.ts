@@ -12,6 +12,7 @@ import { ProductService } from './product.service';
 import { ProductAddDto } from './decorators/product-add.dto';
 import { ProductUpdateDto } from './decorators/product-update.dto';
 import { JwtAuthGuard } from '../auth/guards/JwtAuthGuard';
+import { AdminGuard } from '../auth/guards/AdminGuard';
 
 @Controller('product')
 export class ProductController {
@@ -34,6 +35,7 @@ export class ProductController {
 
   @Put(':id')
   @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminGuard)
   update(
     @Param() params: { id: string },
     @Body() productData: ProductUpdateDto,
