@@ -10,17 +10,17 @@ async function bootstrap() {
       'http://localhost:3000',
       'http://localhost:3001',
       'http://localhost:3007',
-    ], // список фронтов
-    credentials: true, // разрешаем куки
+    ],
+    credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type,Authorization',
   });
 
-  // app.useGlobalPipes(
-  //   new ValidationPipe({
-  //     whitelist: true,
-  //   }),
-  // );
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: false,
+    }),
+  );
   app.use(cookieParser());
   await app.listen(process.env.PORT ?? 3007);
 }
