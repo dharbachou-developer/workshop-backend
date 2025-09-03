@@ -6,10 +6,12 @@ import {
   Delete,
   Param,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { ProductAddDto } from './decorators/product-add.dto';
 import { ProductUpdateDto } from './decorators/product-update.dto';
+import { JwtAuthGuard } from '../auth/guards/JwtAuthGuard';
 
 @Controller('product')
 export class ProductController {
@@ -31,6 +33,7 @@ export class ProductController {
   }
 
   @Put(':id')
+  @UseGuards(JwtAuthGuard)
   update(
     @Param() params: { id: string },
     @Body() productData: ProductUpdateDto,

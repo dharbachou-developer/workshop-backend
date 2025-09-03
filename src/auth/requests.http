@@ -21,10 +21,10 @@ content-type: application/json
 ### Update
 PUT http://localhost:3007/auth/update
 content-type: application/json
-cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNGY1NTM4Ni1jYjM2LTQ1MmYtYmRlZS03NTYyOTQzYjVmNmIiLCJlbWFpbCI6Iml2YW5vdi5pdmFuLjAxQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzU2Mzg3MDg0LCJleHAiOjE3NTYzOTA2ODR9.HlafdQoj7Q91Ix4CLwxBNrekMrR19gClu6E0Y3gYjrA
+cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ZjU1Mzg2LWNiMzYtNDUyZi1iZGVlLTc1NjI5NDNiNWY2YiIsImVtYWlsIjoiaXZhbm92Lml2YW4uMDFAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJpYXQiOjE3NTY5MDA4OTAsImV4cCI6MTc1NzUwNTY5MH0.CcGBI6tZovBF7m7cL2kstlgwHLGXb5ilyjCZ9d1Wp_E
 
 {
 
-  "email": "ivanov.ivan.00011@gmail.com",
-  "roles": ["Admin"]
+  "email": "ivanov.ivan.01@gmail.com",
+  "roles": ["ADMIN"]
 }

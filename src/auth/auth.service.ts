@@ -3,12 +3,13 @@ import {
   UnauthorizedException,
   Injectable,
 } from '@nestjs/common';
-import { AuthUpdateDto } from './decorators/auth-update.dto';
+import { AuthUpdateDto } from './dto/auth-update.dto';
 import { PrismaService } from '../prisma/prisma.service';
-import { AuthSignupDto } from './decorators/auth-signup.dto';
-import { AuthLoginDto } from './decorators/auth-login.dto';
+import { AuthSignupDto } from './dto/auth-signup.dto';
+import { AuthLoginDto } from './dto/auth-login.dto';
 import * as crypto from 'crypto';
 import * as jwt from 'jsonwebtoken';
+import { RequestUser } from './types/types';
 
 @Injectable()
 export class AuthService {
@@ -49,9 +50,9 @@ export class AuthService {
       throw new UnauthorizedException('Invalid credentials');
     }
 
-    const payload = { sub: user.id, email: user.email, roles: user.roles };
+    const payload = { id: user.id, email: user.email, roles: user.roles };
     const token = jwt.sign(payload, process.env.JWT_SECRET || 'dev_secret', {
-      expiresIn: '1h',
+      expiresIn: '1w',
     });
 
     return {
@@ -95,7 +96,7 @@ export class AuthService {
     return this.prisma.user.findMany();
   }
 
-  update(updateDto: AuthUpdateDto) {
+  update(updateDto: AuthUpdateDto, user: RequestUser) {
     const addD = {
       ...updateDto,
     };
@@ -117,7 +118,7 @@ export class AuthService {
         ...addD,
       },
       where: {
-        id: 'bcdfed29-08dd-4e69-8e52-6262b7a3d208',
+        id: user.id,
       },
     });
   }

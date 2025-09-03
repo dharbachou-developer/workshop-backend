@@ -2,18 +2,20 @@ import {
   Body,
   Controller,
   Get,
-  Param,
   Post,
-  Put, Query,
+  Put,
+  Query,
   Res,
   UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { AuthUpdateDto } from './decorators/auth-update.dto';
-import { AuthSignupDto } from './decorators/auth-signup.dto';
-import { AuthLoginDto } from './decorators/auth-login.dto';
+import { AuthUpdateDto } from './dto/auth-update.dto';
+import { AuthSignupDto } from './dto/auth-signup.dto';
+import { AuthLoginDto } from './dto/auth-login.dto';
 import { Response } from 'express';
 import { JwtAuthGuard } from './guards/JwtAuthGuard';
+import { RequestUser } from './types/types';
+import { CurrentUser } from './decorators/current-user.decorator';
 
 @Controller('auth')
 export class AuthController {
@@ -26,8 +28,9 @@ export class AuthController {
 
   @Put('/update')
   @UseGuards(JwtAuthGuard)
-  update(@Body() body: AuthUpdateDto) {
-    return this.authService.update(body);
+  update(@Body() body: AuthUpdateDto, @CurrentUser() user: RequestUser) {
+    console.log(user);
+    return this.authService.update(body, user);
   }
 
   @Post('/signup')
