@@ -32,7 +32,7 @@ export class AuthService {
   ): boolean {
     const actual = Buffer.from(this.hashPassword(password, salt), 'hex');
     const expected = Buffer.from(storedHex, 'hex');
-    // постоянновременное сравнение
+
     return (
       actual.length === expected.length &&
       crypto.timingSafeEqual(actual, expected)
@@ -88,7 +88,6 @@ export class AuthService {
       },
     });
 
-    // Возвращаем безопасный ответ
     return { id: user.id, email: user.email };
   }
 

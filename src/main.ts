@@ -16,11 +16,11 @@ async function bootstrap() {
     allowedHeaders: 'Content-Type,Authorization',
   });
 
-  app.useGlobalPipes(
-    new ValidationPipe({
-      whitelist: false,
-    }),
-  );
+  // app.useGlobalPipes(
+  //   new ValidationPipe({
+  //     whitelist: false,
+  //   }),
+  // );
   app.use(cookieParser());
   await app.listen(process.env.PORT ?? 3007);
 }
