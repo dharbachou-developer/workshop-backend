@@ -16,6 +16,7 @@ import { Response } from 'express';
 import { JwtAuthGuard } from './guards/JwtAuthGuard';
 import { RequestUser } from './types/types';
 import { CurrentUser } from './decorators/current-user.decorator';
+import { AdminGuard } from './guards/AdminGuard';
 
 @Controller('auth')
 export class AuthController {
@@ -58,6 +59,8 @@ export class AuthController {
   }
 
   @Get('/moderators')
+  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminGuard)
   getModerators(@Query() query: { name: string }) {
     return this.authService.getModerators(query.name || '');
   }

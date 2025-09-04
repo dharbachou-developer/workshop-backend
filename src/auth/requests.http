@@ -9,7 +9,6 @@ content-type: application/json
 }
 
 ### Login
-# @no-cookie-jar
 POST http://localhost:3007/auth/login
 content-type: application/json
 
@@ -21,7 +20,7 @@ content-type: application/json
 ### Update
 PUT http://localhost:3007/auth/update
 content-type: application/json
-cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ZjU1Mzg2LWNiMzYtNDUyZi1iZGVlLTc1NjI5NDNiNWY2YiIsImVtYWlsIjoiaXZhbm92Lml2YW4uMDFAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJpYXQiOjE3NTY5MDA4OTAsImV4cCI6MTc1NzUwNTY5MH0.CcGBI6tZovBF7m7cL2kstlgwHLGXb5ilyjCZ9d1Wp_E
+cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ZjU1Mzg2LWNiMzYtNDUyZi1iZGVlLTc1NjI5NDNiNWY2YiIsImVtYWlsIjoiaXZhbm92Lml2YW4uMDFAZ21haWwuY29tIiwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzU2OTkwMjI4LCJleHAiOjE3NTc1OTUwMjh9.sZr5lpt_petQ-XD0t6iW9qWx8BbW62p8viVHL1N3M3A
 
 {
 
